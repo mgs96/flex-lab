@@ -53,9 +53,9 @@ asign       [=]
 [=][=]        {printf("%s es un igual ",yytext);}
 [!][=]        {printf("%s es un diferente ",yytext);}
 [<][>]        {printf("%s es un diferente ",yytext);}
-[(]           {printf("%s es un par_ab ",yytext);}
-[)]           {printf("%s es un par_cier ",yytext);}
-[,]           {printf("%s es un coma",yytext);}
+[(]           {printf("parabre=%s",yytext);}
+[)]           {printf("parcierr=%s",yytext);}
+[,]           {printf("coma=%s",yytext);}
 {variable}    {printf("id%d=%s ",i++,yytext);}
 {reales}      {printf("%s es un Numero",yytext);}
 {string}      {printf("%s es un String",yytext);}

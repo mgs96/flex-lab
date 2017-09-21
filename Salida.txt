@@ -1,0 +1,26 @@
+DEF id1=eval parabre=(id2=xi coma=, id3=exp parcierr=): es un delimitado 
+    id4=ans  = es asign  FALSE
+    FOR id5=i  IN RANGEparabre=(id6=len parabre=(id7=exp parcierr=)parcierr=) : es un delimitado 
+        id8=part  = es asign ? TRUE
+        FOR id9=j  IN RANGEparabre=(id10=len parabre=(id11=exp [ es un delimitado id12=i ] es un delimitado parcierr=)parcierr=) : es un delimitado 
+            id13=part  = es asign  id14=part  AND id15=xi [ es un delimitado id16=exp [ es un delimitado id17=i ] es un delimitado [ es un delimitado id18=j ] es un delimitado ] es un delimitado 
+        id19=ans  = es asign  id20=ans  OR id21=part 
+        
+    RETURN id22=ans 
+
+
+WHILE 2 es un Numero* es un op_mult id23=i <= es un menor_igual 40000L es un Numero
+    id24=h  = es asign  3.4 es un Numeroid25=e -5 es un Numero + es un op_suma  5j es un Numero
+    IF id26=i  == es un igual  0 es un Numero: es un delimitado 
+        BREAK
+
+DEF id27=otra_fun parabre=(parcierr=): es un delimitado 
+    PASS
+PRINTparabre=(‘Esta es la respuesta’,con, ‘y la expresión ’ es un Stringcoma=, 3 es un Numero* es un op_mult id28=i +5 es un Numero* es un op_mult parabre=(7 es un Numero- es un op_resta id29=x parcierr=)parcierr=)
+
+
+
+id30=table  = es asign  [ es un delimitado ] es un delimitado 
+id31=y  = es asign  [ es un delimitado ] es un delimitado 
+
+total: 31 
