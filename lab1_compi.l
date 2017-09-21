@@ -11,16 +11,16 @@ operadores  [+]|[-]|[*]|[*][*]|[/]|[/][/]|[%]|[<][<]|[>][>]|[&]|[|]|[^]|[~][<]|[
 delimitador [[]|[]]|[;]|[:]|[.]|[>][>][=]|[<][<][=]|[+][=]|[-][=]|[*][=]|[/][=]|[/][/][=]|[&][=]|[*][*][=]|[%][=]
 numero      [0-9]
 numeros     {numero}+
-entero      ([+]|[-])?{numeros}
+entero      ([-])?{numeros}
 decimal     {entero}(.{numeros})?
-exp         ({entero}|{decimal})((e([+]|[-])?)digitos)?
+exp         {decimal}(e([-]|[+])?{numeros})?
 img         ({entero}|{decimal})(j|J)
 logint      {entero}(l|L)
 reales      {exp}|{img}|{logint}
 letra       [_a-zA-Z]
 caracter    [_a-zA-Z0-9]*
 variable    {letra}{caracter}
-string      (["](.+)["])|(['](.+)['])|([‘](.+)[’])
+string      (["](.+)["])|(['](.+)['])|([‘](.+)[^‘][’])
 comentario  [#].+
 asign       [=]
 /*Definiciones Regulares*/
@@ -53,12 +53,16 @@ asign       [=]
 [=][=]        {printf("%s es un igual ",yytext);}
 [!][=]        {printf("%s es un diferente ",yytext);}
 [<][>]        {printf("%s es un diferente ",yytext);}
-[(]           {printf("parabre=%s",yytext);}
-[)]           {printf("parcierr=%s",yytext);}
-[,]           {printf("coma=%s",yytext);}
+[(]           {printf("parabre=%s ",yytext);}
+[)]           {printf("parcierr=%s ",yytext);}
+[,]           {printf("coma=%s ",yytext);}
 {variable}    {printf("id%d=%s ",i++,yytext);}
-{reales}      {printf("%s es un Numero",yytext);}
-{string}      {printf("%s es un String",yytext);}
+{entero}      {printf("%s es un entero ",yytext);}
+{decimal}     {printf("%s es un decimal ",yytext);}
+{exp}         {printf("%s es un real ",yytext);}
+{img}         {printf("%s es un imaginario ",yytext);}
+{logint}      {printf("%s es un loginteger ",yytext);}
+{string}      {printf("%s es un String ",yytext);}
 {comentario}  
 . |\n
 %%
