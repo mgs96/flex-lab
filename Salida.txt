@@ -1,26 +1,26 @@
 DEF  id1=eval parabre=(id2=xi coma=, id3=exp parcierr=)dospuntos=: 
-     asig= = FALSE 
-    FOR  id4=i  IN  RANGE parabre=(id5=len parabre=(parcierr=)parcierr=) dospuntos=: 
+    id3=exp  asig= = FALSE 
+    FOR  id4=i  IN  RANGE parabre=(id5=len parabre=(id3=exp parcierr=)parcierr=) dospuntos=: 
         id6=part  asig= =? TRUE 
-        FOR  id7=j  IN  RANGE parabre=(parabre=(corch_abre=[ corch_cierra=] parcierr=)parcierr=) dospuntos=: 
-             asig= =  AND  corch_abre=[ corch_abre=[ corch_cierra=] corch_abre=[ corch_cierra=] corch_cierra=] 
-        id8=ans  asig= =  OR  
+        FOR  id7=j  IN  RANGE parabre=(id5=len parabre=(id3=exp corch_abre=[ id4=i corch_cierra=] parcierr=)parcierr=) dospuntos=: 
+            id6=part  asig= = id6=part  AND  id2=xi corch_abre=[ id3=exp corch_abre=[ id4=i corch_cierra=] corch_abre=[ id7=j corch_cierra=] corch_cierra=] 
+        id8=ans  asig= = id8=ans  OR  id6=part 
         
-    RETURN  
+    RETURN  id8=ans 
 
 
-WHILE  2 es un entero * es un op_mult <= es un menor_igual 40000L es un loginteger 
+WHILE  2 es un entero * es un op_mult id4=i <= es un menor_igual 40000L es un loginteger 
     id9=h  asig= = 3.4e-5 es un real  + es un op_suma  5j es un imaginario 
-    IF   == es un igual  0 es un entero dospuntos=: 
+    IF  id4=i  == es un igual  0 es un entero dospuntos=: 
         BREAK 
 
 DEF  id10=otra_fun parabre=(parcierr=)dospuntos=: 
     PASS 
-PRINT parabre=(‘Esta es la respuesta’,con, ‘y la expresión es un String coma=, 3 es un entero * es un op_mult + es un op_suma 5 es un entero * es un op_mult parabre=(7 es un entero - es un op_resta id11=x parcierr=)parcierr=)
+PRINT parabre=(‘Esta es la respuesta’,con, ‘y la expresión es un String coma=, 3 es un entero * es un op_mult id4=i + es un op_suma 5 es un entero * es un op_mult parabre=(7 es un entero - es un op_resta id11=x parcierr=)parcierr=)
 
 
 
 id12=table  asig= = corch_abre=[ corch_cierra=] 
 id13=y  asig= = corch_abre=[ corch_cierra=] 
 
-total: 13 
+total: 13
