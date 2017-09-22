@@ -124,10 +124,9 @@ main(int argc, char *argv[]){
   yylex();
   printf("\n");
   int k;
-  /*strcpy(ids[i], yytext)
-  for(k=1;k<=i;k++){
+  for(k=1;k<i;k++){
     printf("id%d = %s \n",k,ids[k]);
-  }*/
+  }
   printf("total: %d \n",i-1);
   
 }
