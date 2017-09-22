@@ -1,7 +1,13 @@
 /* Includes y definiciones de variables */
 %{
 #include <ctype.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
 int i=1;
+char* ids[1000];
+int size=0;
 %}
 
 /* Definiciones Regulares */
@@ -28,17 +34,29 @@ asign       [=]
 /* Reglas */
 
 %%
-\t+           // Tabulación
-\b+           // Espacios en blanco
 {pal_reser}   { int i;
                 for (i=0;i<yyleng;i++) 
-                printf ("%c",toupper(yytext[i]));}
-{delimitador} {printf("%s es un delimitado ",yytext);}
+                printf ("%c",toupper(yytext[i]));
+                printf (" ");}
+[[]           {printf("corch_abre=%s ",yytext);}
+[]]           {printf("corch_cierra=%s ",yytext);}
+[;]           {printf("punto_coma=%s ",yytext);}
+[:]           {printf("dospuntos=%s ",yytext);}
+[>][>][=]     
+[<][<][=]     
+[+][=]        
+[-][=]        
+[*][=]        
+[/][=]        
+[/][/][=]     
+[&][=]        
+[*][*][=]     
+[%][=]        
 [+]           {printf("%s es un op_suma ",yytext);}
 [-]           {printf("%s es un op_resta ",yytext);}
 [*]           {printf("%s es un op_mult ",yytext);}
 [*][*]        {printf("%s es un op_pot ",yytext);}
-{asign}       {printf("%s es asign ",yytext);}
+{asign}       {printf("asig= %s",yytext);}
 [/]           {printf("%s es un op_div ",yytext);}
 [/][/]        {printf("%s es un op_npi ",yytext);}
 [%]           {printf("%s es un op_mod ",yytext);}
@@ -53,10 +71,32 @@ asign       [=]
 [=][=]        {printf("%s es un igual ",yytext);}
 [!][=]        {printf("%s es un diferente ",yytext);}
 [<][>]        {printf("%s es un diferente ",yytext);}
-[(]           {printf("parabre=%s ",yytext);}
-[)]           {printf("parcierr=%s ",yytext);}
-[,]           {printf("coma=%s ",yytext);}
-{variable}    {printf("id%d=%s ",i++,yytext);}
+[(]           {printf("parabre=%s",yytext);}
+[)]           {printf("parcierr=%s",yytext);}
+[,]           {printf("coma=%s",yytext);}
+{variable}    {
+               if(i==1){
+                  ids[i]=yytext;
+                  printf("id%d=%s ",i,ids[i]);
+                  i++;
+               }else{
+                  int sw=0;
+                  int j=1;
+                  while(j<i && sw != 1){
+                    //Falla la comparacion
+                    if(strcmp(ids[j],yytext) == 0){
+                      sw=1;
+                      j=i+i;
+                    }
+                    j++;
+                  }
+                  if(sw==0){
+                    ids[i]=yytext;
+                    printf("id%d=%s ",i,ids[i]);
+                    i++;
+                  }
+               }
+              }
 {entero}      {printf("%s es un entero ",yytext);}
 {decimal}     {printf("%s es un decimal ",yytext);}
 {exp}         {printf("%s es un real ",yytext);}
