@@ -572,7 +572,7 @@ char *yytext;
 #include <string.h>
 
 int i=1;
-char* ids[1000];
+char *ids[1000];
 int size=0;
 /* Definiciones Regulares */
 /*Definiciones Regulares*/
@@ -1042,71 +1042,75 @@ YY_RULE_SETUP
 #line 77 "lab1_compi.l"
 {
                if(i==1){
-                  ids[i]=yytext;
+                  ids[i]=strdup(yytext);
                   printf("id%d=%s ",i,ids[i]);
                   i++;
                }else{
                   int sw=0;
                   int j=1;
+                  int pos=0;
                   while(j<i && sw != 1){
                     //Falla la comparacion
-                    if(strcmp(ids[j],yytext) == 0){
+                    if(strcmp(ids[j],strdup(yytext)) == 0){
                       sw=1;
+                      pos=j;
                       j=i+i;
                     }
                     j++;
                   }
                   if(sw==0){
-                    ids[i]=yytext;
+                    ids[i]=strdup(yytext);
                     printf("id%d=%s ",i,ids[i]);
                     i++;
+                  }else{
+                    printf("id%d=%s ",pos,ids[pos]);
                   }
                }
               }
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 100 "lab1_compi.l"
+#line 104 "lab1_compi.l"
 {printf("%s es un entero ",yytext);}
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
-#line 101 "lab1_compi.l"
+#line 105 "lab1_compi.l"
 {printf("%s es un decimal ",yytext);}
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
-#line 102 "lab1_compi.l"
+#line 106 "lab1_compi.l"
 {printf("%s es un real ",yytext);}
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
-#line 103 "lab1_compi.l"
+#line 107 "lab1_compi.l"
 {printf("%s es un imaginario ",yytext);}
 	YY_BREAK
 case 43:
 YY_RULE_SETUP
-#line 104 "lab1_compi.l"
+#line 108 "lab1_compi.l"
 {printf("%s es un loginteger ",yytext);}
 	YY_BREAK
 case 44:
 /* rule 44 can match eol */
 YY_RULE_SETUP
-#line 105 "lab1_compi.l"
+#line 109 "lab1_compi.l"
 {printf("%s es un String ",yytext);}
 	YY_BREAK
 case 45:
 YY_RULE_SETUP
-#line 106 "lab1_compi.l"
+#line 110 "lab1_compi.l"
 
 	YY_BREAK
 case 46:
-#line 108 "lab1_compi.l"
+#line 112 "lab1_compi.l"
 case 47:
-#line 108 "lab1_compi.l"
+#line 112 "lab1_compi.l"
 ECHO;
 	YY_BREAK
-#line 1110 "lex.yy.c"
+#line 1114 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -2104,7 +2108,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 108 "lab1_compi.l"
+#line 112 "lab1_compi.l"
 
 
 
@@ -2120,7 +2124,13 @@ main(int argc, char *argv[]){
   yyin=fopen(argv[1],"r");
   yylex();
   printf("\n");
+  int k;
+  /*strcpy(ids[i], yytext)
+  for(k=1;k<=i;k++){
+    printf("id%d = %s \n",k,ids[k]);
+  }*/
   printf("total: %d \n",i-1);
+  
 }
 
 /* Codigo C */

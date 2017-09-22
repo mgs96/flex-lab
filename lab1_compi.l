@@ -6,7 +6,7 @@
 #include <string.h>
 
 int i=1;
-char* ids[1000];
+char *ids[1000];
 int size=0;
 %}
 
@@ -76,24 +76,28 @@ asign       [=]
 [,]           {printf("coma=%s",yytext);}
 {variable}    {
                if(i==1){
-                  ids[i]=yytext;
+                  ids[i]=strdup(yytext);
                   printf("id%d=%s ",i,ids[i]);
                   i++;
                }else{
                   int sw=0;
                   int j=1;
+                  int pos=0;
                   while(j<i && sw != 1){
                     //Falla la comparacion
-                    if(strcmp(ids[j],yytext) == 0){
+                    if(strcmp(ids[j],strdup(yytext)) == 0){
                       sw=1;
+                      pos=j;
                       j=i+i;
                     }
                     j++;
                   }
                   if(sw==0){
-                    ids[i]=yytext;
+                    ids[i]=strdup(yytext);
                     printf("id%d=%s ",i,ids[i]);
                     i++;
+                  }else{
+                    printf("id%d=%s ",pos,ids[pos]);
                   }
                }
               }
@@ -119,7 +123,13 @@ main(int argc, char *argv[]){
   yyin=fopen(argv[1],"r");
   yylex();
   printf("\n");
+  int k;
+  /*strcpy(ids[i], yytext)
+  for(k=1;k<=i;k++){
+    printf("id%d = %s \n",k,ids[k]);
+  }*/
   printf("total: %d \n",i-1);
+  
 }
 
 /* Codigo C */

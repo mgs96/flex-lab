@@ -1,26 +1,26 @@
 DEF  id1=eval parabre=(id2=xi coma=, id3=exp parcierr=)dospuntos=: 
-    id4=ans  asig= = FALSE 
-    FOR  id5=i  IN  RANGE parabre=(id6=len parabre=(id7=exp parcierr=)parcierr=) dospuntos=: 
-        id8=part  asig= =? TRUE 
-        FOR  id9=j  IN  RANGE parabre=(id10=len parabre=(id11=exp corch_abre=[ id12=i corch_cierra=] parcierr=)parcierr=) dospuntos=: 
-            id13=part  asig= = id14=part  AND  id15=xi corch_abre=[ id16=exp corch_abre=[ id17=i corch_cierra=] corch_abre=[ id18=j corch_cierra=] corch_cierra=] 
-        id19=ans  asig= = id20=ans  OR  id21=part 
+     asig= = FALSE 
+    FOR  id4=i  IN  RANGE parabre=(id5=len parabre=(parcierr=)parcierr=) dospuntos=: 
+        id6=part  asig= =? TRUE 
+        FOR  id7=j  IN  RANGE parabre=(parabre=(corch_abre=[ corch_cierra=] parcierr=)parcierr=) dospuntos=: 
+             asig= =  AND  corch_abre=[ corch_abre=[ corch_cierra=] corch_abre=[ corch_cierra=] corch_cierra=] 
+        id8=ans  asig= =  OR  
         
-    RETURN  id22=ans 
+    RETURN  
 
 
-WHILE  2 es un entero * es un op_mult id23=i <= es un menor_igual 40000L es un loginteger 
-    id24=h  asig= = 3.4e-5 es un real  + es un op_suma  5j es un imaginario 
-    IF  id25=i  == es un igual  0 es un entero dospuntos=: 
+WHILE  2 es un entero * es un op_mult <= es un menor_igual 40000L es un loginteger 
+    id9=h  asig= = 3.4e-5 es un real  + es un op_suma  5j es un imaginario 
+    IF   == es un igual  0 es un entero dospuntos=: 
         BREAK 
 
-DEF  id26=otra_fun parabre=(parcierr=)dospuntos=: 
+DEF  id10=otra_fun parabre=(parcierr=)dospuntos=: 
     PASS 
-PRINT parabre=(‘Esta es la respuesta’,con, ‘y la expresión � es un String ��coma=, 3 es un entero * es un op_mult id27=i + es un op_suma 5 es un entero * es un op_mult parabre=(7 es un entero - es un op_resta id28=x parcierr=)parcierr=)
+PRINT parabre=(‘Esta es la respuesta’,con, ‘y la expresión es un String coma=, 3 es un entero * es un op_mult + es un op_suma 5 es un entero * es un op_mult parabre=(7 es un entero - es un op_resta id11=x parcierr=)parcierr=)
 
 
 
-id29=table  asig= = corch_abre=[ corch_cierra=] 
-id30=y  asig= = corch_abre=[ corch_cierra=] 
+id12=table  asig= = corch_abre=[ corch_cierra=] 
+id13=y  asig= = corch_abre=[ corch_cierra=] 
 
-total: 30 
+total: 13 
