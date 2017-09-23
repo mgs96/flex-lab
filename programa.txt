@@ -1,5 +1,5 @@
 def eval(xi, exp):
-    exp = False
+    ans = False
     for i in range(len(exp)) :
         part =? True
         for j in range(len(exp[i])) :
@@ -16,7 +16,7 @@ while 2*i<=40000L
 
 def otra_fun():
     pass
-print(‘Esta es la respuesta’,con, ‘y la expresión ’, 3*i+5*(7-x))
+print(‘Esta es la respuesta’,con_123, ‘y la expresión ’, 3*i+5*(7-x))
 
 #string de la hipotesis
 

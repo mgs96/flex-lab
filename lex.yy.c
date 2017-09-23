@@ -854,192 +854,191 @@ YY_RULE_SETUP
 #line 37 "lab1_compi.l"
 { int i;
                 for (i=0;i<yyleng;i++) 
-                printf ("%c",toupper(yytext[i]));
-                printf (" ");}
+                printf ("%c",toupper(yytext[i]));}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 41 "lab1_compi.l"
+#line 40 "lab1_compi.l"
 {printf("corch_abre=%s ",yytext);}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 42 "lab1_compi.l"
+#line 41 "lab1_compi.l"
 {printf("corch_cierra=%s ",yytext);}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 43 "lab1_compi.l"
+#line 42 "lab1_compi.l"
 {printf("punto_coma=%s ",yytext);}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 44 "lab1_compi.l"
+#line 43 "lab1_compi.l"
 {printf("dospuntos=%s ",yytext);}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 45 "lab1_compi.l"
+#line 44 "lab1_compi.l"
 
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 46 "lab1_compi.l"
+#line 45 "lab1_compi.l"
 
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 47 "lab1_compi.l"
+#line 46 "lab1_compi.l"
 
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 48 "lab1_compi.l"
+#line 47 "lab1_compi.l"
 
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 49 "lab1_compi.l"
+#line 48 "lab1_compi.l"
 
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 50 "lab1_compi.l"
+#line 49 "lab1_compi.l"
 
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 51 "lab1_compi.l"
+#line 50 "lab1_compi.l"
 
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 52 "lab1_compi.l"
+#line 51 "lab1_compi.l"
 
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 53 "lab1_compi.l"
+#line 52 "lab1_compi.l"
 
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 54 "lab1_compi.l"
+#line 53 "lab1_compi.l"
 
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 55 "lab1_compi.l"
-{printf("%s es un op_suma ",yytext);}
+#line 54 "lab1_compi.l"
+{printf("suma=%s",yytext);}
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 56 "lab1_compi.l"
-{printf("%s es un op_resta ",yytext);}
+#line 55 "lab1_compi.l"
+{printf("menos=%s",yytext);}
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 57 "lab1_compi.l"
-{printf("%s es un op_mult ",yytext);}
+#line 56 "lab1_compi.l"
+{printf("mult=%s",yytext);}
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 58 "lab1_compi.l"
-{printf("%s es un op_pot ",yytext);}
+#line 57 "lab1_compi.l"
+{printf("div=%s",yytext);}
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 59 "lab1_compi.l"
+#line 58 "lab1_compi.l"
 {printf("asig= %s",yytext);}
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 60 "lab1_compi.l"
+#line 59 "lab1_compi.l"
 {printf("%s es un op_div ",yytext);}
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 61 "lab1_compi.l"
+#line 60 "lab1_compi.l"
 {printf("%s es un op_npi ",yytext);}
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 62 "lab1_compi.l"
+#line 61 "lab1_compi.l"
 {printf("%s es un op_mod ",yytext);}
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 63 "lab1_compi.l"
+#line 62 "lab1_compi.l"
 {printf("%s es un muy_menor ",yytext);}
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 64 "lab1_compi.l"
+#line 63 "lab1_compi.l"
 {printf("%s es un muy_mayor ",yytext);}
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 65 "lab1_compi.l"
+#line 64 "lab1_compi.l"
 {printf("%s es un and ",yytext);}
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 66 "lab1_compi.l"
+#line 65 "lab1_compi.l"
 {printf("%s es un negacion ",yytext);}
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 67 "lab1_compi.l"
+#line 66 "lab1_compi.l"
 {printf("%s es un menor ",yytext);}
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 68 "lab1_compi.l"
+#line 67 "lab1_compi.l"
 {printf("%s es un mayor ",yytext);}
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 69 "lab1_compi.l"
-{printf("%s es un menor_igual ",yytext);}
+#line 68 "lab1_compi.l"
+{printf("menor_ig=%s",yytext);}
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 70 "lab1_compi.l"
-{printf("%s es un mayor_igual ",yytext);}
+#line 69 "lab1_compi.l"
+{printf("mayor_ig=%s",yytext);}
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 71 "lab1_compi.l"
-{printf("%s es un igual ",yytext);}
+#line 70 "lab1_compi.l"
+{printf("comp= %s",yytext);}
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 72 "lab1_compi.l"
+#line 71 "lab1_compi.l"
 {printf("%s es un diferente ",yytext);}
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 73 "lab1_compi.l"
+#line 72 "lab1_compi.l"
 {printf("%s es un diferente ",yytext);}
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 74 "lab1_compi.l"
+#line 73 "lab1_compi.l"
 {printf("parabre=%s",yytext);}
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 75 "lab1_compi.l"
+#line 74 "lab1_compi.l"
 {printf("parcierr=%s",yytext);}
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 76 "lab1_compi.l"
+#line 75 "lab1_compi.l"
 {printf("coma=%s",yytext);}
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 77 "lab1_compi.l"
+#line 76 "lab1_compi.l"
 {
                if(i==1){
                   ids[i]=strdup(yytext);
@@ -1070,47 +1069,47 @@ YY_RULE_SETUP
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 104 "lab1_compi.l"
-{printf("%s es un entero ",yytext);}
+#line 103 "lab1_compi.l"
+{printf("entero=%s",yytext);}
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
-#line 105 "lab1_compi.l"
-{printf("%s es un decimal ",yytext);}
+#line 104 "lab1_compi.l"
+{printf("decimal=%s",yytext);}
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
-#line 106 "lab1_compi.l"
-{printf("%s es un real ",yytext);}
+#line 105 "lab1_compi.l"
+{printf("real=%s",yytext);}
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
-#line 107 "lab1_compi.l"
-{printf("%s es un imaginario ",yytext);}
+#line 106 "lab1_compi.l"
+{printf("imaginario=%s",yytext);}
 	YY_BREAK
 case 43:
 YY_RULE_SETUP
-#line 108 "lab1_compi.l"
-{printf("%s es un loginteger ",yytext);}
+#line 107 "lab1_compi.l"
+{printf("long=%s",yytext);}
 	YY_BREAK
 case 44:
 /* rule 44 can match eol */
 YY_RULE_SETUP
-#line 109 "lab1_compi.l"
-{printf("%s es un String ",yytext);}
+#line 108 "lab1_compi.l"
+{printf("cadena=%s",yytext);}
 	YY_BREAK
 case 45:
 YY_RULE_SETUP
-#line 110 "lab1_compi.l"
+#line 109 "lab1_compi.l"
 
 	YY_BREAK
 case 46:
-#line 112 "lab1_compi.l"
+#line 111 "lab1_compi.l"
 case 47:
-#line 112 "lab1_compi.l"
+#line 111 "lab1_compi.l"
 ECHO;
 	YY_BREAK
-#line 1114 "lex.yy.c"
+#line 1113 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -2108,7 +2107,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 112 "lab1_compi.l"
+#line 111 "lab1_compi.l"
 
 
 
@@ -2129,7 +2128,6 @@ main(int argc, char *argv[]){
     printf("id%d = %s \n",k,ids[k]);
   }
   printf("total: %d \n",i-1);
-  
 }
 
 /* Codigo C */

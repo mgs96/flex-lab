@@ -36,8 +36,7 @@ asign       [=]
 %%
 {pal_reser}   { int i;
                 for (i=0;i<yyleng;i++) 
-                printf ("%c",toupper(yytext[i]));
-                printf (" ");}
+                printf ("%c",toupper(yytext[i]));}
 [[]           {printf("corch_abre=%s ",yytext);}
 []]           {printf("corch_cierra=%s ",yytext);}
 [;]           {printf("punto_coma=%s ",yytext);}
@@ -52,12 +51,12 @@ asign       [=]
 [&][=]        
 [*][*][=]     
 [%][=]        
-[+]           {printf("%s es un op_suma ",yytext);}
-[-]           {printf("%s es un op_resta ",yytext);}
-[*]           {printf("%s es un op_mult ",yytext);}
-[*][*]        {printf("%s es un op_pot ",yytext);}
+[+]           {printf("suma= %s",yytext);}
+[-]           {printf("menos= %s",yytext);}
+[*]           {printf("mult= %s",yytext);}
+[*][*]        {printf("pot= %s",yytext);}
 {asign}       {printf("asig= %s",yytext);}
-[/]           {printf("%s es un op_div ",yytext);}
+[/]           {printf("div= %s",yytext);}
 [/][/]        {printf("%s es un op_npi ",yytext);}
 [%]           {printf("%s es un op_mod ",yytext);}
 [<][<]        {printf("%s es un muy_menor ",yytext);}
@@ -66,9 +65,9 @@ asign       [=]
 [~]           {printf("%s es un negacion ",yytext);}
 [<]           {printf("%s es un menor ",yytext);}
 [>]           {printf("%s es un mayor ",yytext);}
-[<][=]        {printf("%s es un menor_igual ",yytext);}
-[>][=]        {printf("%s es un mayor_igual ",yytext);}
-[=][=]        {printf("%s es un igual ",yytext);}
+[<][=]        {printf("menor_ig=%s",yytext);}
+[>][=]        {printf("mayor_ig=%s",yytext);}
+[=][=]        {printf("comp= %s",yytext);}
 [!][=]        {printf("%s es un diferente ",yytext);}
 [<][>]        {printf("%s es un diferente ",yytext);}
 [(]           {printf("parabre=%s",yytext);}
@@ -101,12 +100,12 @@ asign       [=]
                   }
                }
               }
-{entero}      {printf("%s es un entero ",yytext);}
-{decimal}     {printf("%s es un decimal ",yytext);}
-{exp}         {printf("%s es un real ",yytext);}
-{img}         {printf("%s es un imaginario ",yytext);}
-{logint}      {printf("%s es un loginteger ",yytext);}
-{string}      {printf("%s es un String ",yytext);}
+{entero}      {printf("entero=%s",yytext);}
+{decimal}     {printf("decimal=%s",yytext);}
+{exp}         {printf("real=%s",yytext);}
+{img}         {printf("imaginario=%s",yytext);}
+{logint}      {printf("long=%s",yytext);}
+{string}      {printf("cadena=%s",yytext);}
 {comentario}  
 . |\n
 %%
@@ -128,7 +127,6 @@ main(int argc, char *argv[]){
     printf("id%d = %s \n",k,ids[k]);
   }
   printf("total: %d \n",i-1);
-  
 }
 
 /* Codigo C */

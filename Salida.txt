@@ -1,26 +1,39 @@
-DEF  id1=eval parabre=(id2=xi coma=, id3=exp parcierr=)dospuntos=: 
-    id3=exp  asig= = FALSE 
-    FOR  id4=i  IN  RANGE parabre=(id5=len parabre=(id3=exp parcierr=)parcierr=) dospuntos=: 
-        id6=part  asig= =? TRUE 
-        FOR  id7=j  IN  RANGE parabre=(id5=len parabre=(id3=exp corch_abre=[ id4=i corch_cierra=] parcierr=)parcierr=) dospuntos=: 
-            id6=part  asig= = id6=part  AND  id2=xi corch_abre=[ id3=exp corch_abre=[ id4=i corch_cierra=] corch_abre=[ id7=j corch_cierra=] corch_cierra=] 
-        id8=ans  asig= = id8=ans  OR  id6=part 
+DEF id1=eval parabre=(id2=xi coma=, id3=exp parcierr=)dospuntos=: 
+    id4=ans  asig= = FALSE
+    FOR id5=i  IN RANGEparabre=(id6=len parabre=(id3=exp parcierr=)parcierr=) dospuntos=: 
+        id7=part  asig= =? TRUE
+        FOR id8=j  IN RANGEparabre=(id6=len parabre=(id3=exp corch_abre=[ id5=i corch_cierra=] parcierr=)parcierr=) dospuntos=: 
+            id7=part  asig= = id7=part  AND id2=xi corch_abre=[ id3=exp corch_abre=[ id5=i corch_cierra=] corch_abre=[ id8=j corch_cierra=] corch_cierra=] 
+        id4=ans  asig= = id4=ans  OR id7=part 
         
-    RETURN  id8=ans 
+    RETURN id4=ans 
 
 
-WHILE  2 es un entero * es un op_mult id4=i <= es un menor_igual 40000L es un loginteger 
-    id9=h  asig= = 3.4e-5 es un real  + es un op_suma  5j es un imaginario 
-    IF  id4=i  == es un igual  0 es un entero dospuntos=: 
-        BREAK 
+WHILE entero=2mult=*id5=i menor_ig=<=long=40000L
+    id9=h  asig= = real=3.4e-5 suma=+ imaginario=5j
+    IF id5=i  comp= == entero=0dospuntos=: 
+        BREAK
 
-DEF  id10=otra_fun parabre=(parcierr=)dospuntos=: 
-    PASS 
-PRINT parabre=(‘Esta es la respuesta’,con, ‘y la expresión es un String coma=, 3 es un entero * es un op_mult id4=i + es un op_suma 5 es un entero * es un op_mult parabre=(7 es un entero - es un op_resta id11=x parcierr=)parcierr=)
+DEF id10=otra_fun parabre=(parcierr=)dospuntos=: 
+    PASS
+PRINTparabre=(cadena=‘Esta es la respuesta’,con_123, ‘y la expresión ’coma=, entero=3mult=*id5=i suma=+entero=5mult=*parabre=(entero=7menos=-id11=x parcierr=)parcierr=)
 
 
 
 id12=table  asig= = corch_abre=[ corch_cierra=] 
 id13=y  asig= = corch_abre=[ corch_cierra=] 
 
-total: 13
+id1 = eval 
+id2 = xi 
+id3 = exp 
+id4 = ans 
+id5 = i 
+id6 = len 
+id7 = part 
+id8 = j 
+id9 = h 
+id10 = otra_fun 
+id11 = x 
+id12 = table 
+id13 = y 
+total: 13 
