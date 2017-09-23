@@ -7,7 +7,7 @@
 
 int i=1;
 char *ids[1000];
-int size=0;
+int errores=0;
 %}
 
 /* Definiciones Regulares */
@@ -29,7 +29,7 @@ variable    {letra}{caracter}
 string      (".+")|('.+')|([‘’].+[‘’])
 comentario  [#].+
 asign       [=]
-error       [^({boolean}|{pal_reser}|{operadores}|{delimitador}|{numeros}|{entero}|{decimal}|{exp}|{img}|{logint}|{reales}|{variable}|{string}|{comentario}|{asign}|“ ”|t|\n)]
+error       ({entero}{variable})|[^({boolean}|{pal_reser}|{operadores}|{delimitador}|{numeros}|{entero}|{decimal}|{exp}|{img}|{logint}|{reales}|{variable}|{string}|{comentario}|{asign}|“ ”|t|\n)]
 /*Definiciones Regulares*/
 
 /* Reglas */
@@ -110,7 +110,7 @@ error       [^({boolean}|{pal_reser}|{operadores}|{delimitador}|{numeros}|{enter
 {img}         {printf("imaginario=%s ",yytext);}
 {logint}      {printf("long=%s ",yytext);}
 {string}      {printf("cadena=%s ",yytext);}
-{error}       {printf("Error=%s ",yytext);}
+{error}       {printf("Error=%s ",yytext);errores++;}
 {comentario}  
 . |\n
 %%
@@ -131,7 +131,8 @@ main(int argc, char *argv[]){
   for(k=1;k<i;k++){
     printf("id%d = %s \n",k,ids[k]);
   }
-  printf("total: %d \n",i-1);
+  printf("\nTotal identificadores: %d \n \n",i-1);
+  printf("Error(es): %d \n",errores);
 }
 
 /* Codigo C */
