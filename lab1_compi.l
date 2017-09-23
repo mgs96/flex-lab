@@ -26,17 +26,21 @@ reales      {exp}|{img}|{logint}
 letra       [_a-zA-Z]
 caracter    [_a-zA-Z0-9]*
 variable    {letra}{caracter}
-string      (["](.+)["])|(['](.+)['])|([‘](.+)[^‘][’])
+string      (".+")|('.+')|([‘’].+[‘’])
 comentario  [#].+
 asign       [=]
+error       [^({boolean}|{pal_reser}|{operadores}|{delimitador}|{numeros}|{entero}|{decimal}|{exp}|{img}|{logint}|{reales}|{variable}|{string}|{comentario}|{asign}|“ ”|t|\n)]
 /*Definiciones Regulares*/
 
 /* Reglas */
 
 %%
 {pal_reser}   { int i;
-                for (i=0;i<yyleng;i++) 
-                printf ("%c",toupper(yytext[i]));}
+                for (i=0;i<yyleng;i++){
+                  printf ("%c",toupper(yytext[i]));
+                }
+                printf (" ");
+              }
 [[]           {printf("corch_abre=%s ",yytext);}
 []]           {printf("corch_cierra=%s ",yytext);}
 [;]           {printf("punto_coma=%s ",yytext);}
@@ -51,12 +55,12 @@ asign       [=]
 [&][=]        
 [*][*][=]     
 [%][=]        
-[+]           {printf("suma= %s",yytext);}
-[-]           {printf("menos= %s",yytext);}
-[*]           {printf("mult= %s",yytext);}
-[*][*]        {printf("pot= %s",yytext);}
-{asign}       {printf("asig= %s",yytext);}
-[/]           {printf("div= %s",yytext);}
+[+]           {printf("suma= %s ",yytext);}
+[-]           {printf("menos= %s ",yytext);}
+[*]           {printf("mult= %s ",yytext);}
+[*][*]        {printf("pot= %s ",yytext);}
+{asign}       {printf("asig= %s ",yytext);}
+[/]           {printf("div= %s ",yytext);}
 [/][/]        {printf("%s es un op_npi ",yytext);}
 [%]           {printf("%s es un op_mod ",yytext);}
 [<][<]        {printf("%s es un muy_menor ",yytext);}
@@ -65,47 +69,48 @@ asign       [=]
 [~]           {printf("%s es un negacion ",yytext);}
 [<]           {printf("%s es un menor ",yytext);}
 [>]           {printf("%s es un mayor ",yytext);}
-[<][=]        {printf("menor_ig=%s",yytext);}
-[>][=]        {printf("mayor_ig=%s",yytext);}
-[=][=]        {printf("comp= %s",yytext);}
+[<][=]        {printf("menor_ig=%s ",yytext);}
+[>][=]        {printf("mayor_ig=%s ",yytext);}
+[=][=]        {printf("comp= %s ",yytext);}
 [!][=]        {printf("%s es un diferente ",yytext);}
 [<][>]        {printf("%s es un diferente ",yytext);}
-[(]           {printf("parabre=%s",yytext);}
-[)]           {printf("parcierr=%s",yytext);}
-[,]           {printf("coma=%s",yytext);}
+[(]           {printf("parabre=%s ",yytext);}
+[)]           {printf("parcierr=%s ",yytext);}
+[,]           {printf("coma=%s ",yytext);}
 {variable}    {
-               if(i==1){
-                  ids[i]=strdup(yytext);
-                  printf("id%d=%s ",i,ids[i]);
-                  i++;
-               }else{
-                  int sw=0;
-                  int j=1;
-                  int pos=0;
-                  while(j<i && sw != 1){
-                    //Falla la comparacion
-                    if(strcmp(ids[j],strdup(yytext)) == 0){
-                      sw=1;
-                      pos=j;
-                      j=i+i;
-                    }
-                    j++;
-                  }
-                  if(sw==0){
+                 if(i==1){
                     ids[i]=strdup(yytext);
                     printf("id%d=%s ",i,ids[i]);
                     i++;
-                  }else{
-                    printf("id%d=%s ",pos,ids[pos]);
-                  }
-               }
+                 }else{
+                    int sw=0;
+                    int j=1;
+                    int pos=0;
+                    while(j<i && sw != 1){
+                      //Falla la comparacion
+                      if(strcmp(ids[j],strdup(yytext)) == 0){
+                        sw=1;
+                        pos=j;
+                        j=i+i;
+                      }
+                      j++;
+                    }
+                    if(sw==0){
+                      ids[i]=strdup(yytext);
+                      printf("id%d=%s ",i,ids[i]);
+                      i++;
+                    }else{
+                      printf("id%d=%s ",pos,ids[pos]);
+                    }
+                 }
               }
-{entero}      {printf("entero=%s",yytext);}
-{decimal}     {printf("decimal=%s",yytext);}
-{exp}         {printf("real=%s",yytext);}
-{img}         {printf("imaginario=%s",yytext);}
-{logint}      {printf("long=%s",yytext);}
-{string}      {printf("cadena=%s",yytext);}
+{entero}      {printf("entero=%s ",yytext);}
+{decimal}     {printf("decimal=%s ",yytext);}
+{exp}         {printf("real=%s ",yytext);}
+{img}         {printf("imaginario=%s ",yytext);}
+{logint}      {printf("long=%s ",yytext);}
+{string}      {printf("cadena=%s ",yytext);}
+{error}       {printf("Error=%s ",yytext);}
 {comentario}  
 . |\n
 %%
