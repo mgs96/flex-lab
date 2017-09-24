@@ -29,7 +29,7 @@ variable    {letra}{caracter}
 string      [\"'‘][^"'‘’]*[\"'’]
 comentario  [#].+
 asign       [=]
-error       ({entero}{variable})|[^({boolean}|{pal_reser}|{operadores}|{delimitador}|{numeros}|{entero}|{decimal}|{exp}|{img}|{logint}|{reales}|{variable}|{string}|{comentario}|{asign}|“ ”|t|\n)]
+error       ({entero}{variable})|[^({boolean}|{pal_reser}|{operadores}|{delimitador}|{numeros}|{entero}|{decimal}|{exp}|{img}|{logint}|{reales}|{variable}|{string}|{comentario}|{asign}|“ ”|t|\n)]|({operadores}{operadores})
 /*Definiciones Regulares \["'‘][^"'‘’]*\["'’]*/
 
 /* Reglas */
