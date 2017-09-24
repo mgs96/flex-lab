@@ -13,8 +13,8 @@ int errores=0;
 /* Definiciones Regulares */
 boolean     True|true|TRUE|False|false|FALSE
 pal_reser   and|else|is|return|break|for|not|while|continue|if|or|def|import|pass|elif|in|print|range|{boolean}
-operadores  [+]|[-]|[*]|[*][*]|[/]|[/][/]|[%]|[<][<]|[>][>]|[&]|[|]|[^]|[~][<]|[>]|[<][=]|[>][=]|[=][=]|[!][=]|[<][>]
-delimitador [[]|[]]|[;]|[:]|[.]|[>][>][=]|[<][<][=]|[+][=]|[-][=]|[*][=]|[/][=]|[/][/][=]|[&][=]|[*][*][=]|[%][=]
+operadores  [+]|[-]|[*]|[*][*]|[/]|[/][/]|[%]|[<][<]|[>][>]|[&]|[|]|(^)|[~][<]|[>]|[<][=]|[>][=]|[=][=]|[!][=]|[<][>]
+delimitador [[]|[]]|[;]|[:]|[.]|[,]|[>][>][=]|[<][<][=]|[+][=]|[-][=]|[*][=]|[/][=]|[/][/][=]|[&][=]|[*][*][=]|[%][=]
 numero      [0-9]
 numeros     {numero}+
 entero      ([-])?{numeros}
@@ -26,11 +26,11 @@ reales      {exp}|{img}|{logint}
 letra       [_a-zA-Z]
 caracter    [_a-zA-Z0-9]*
 variable    {letra}{caracter}
-string      (".+")|('.+')|([‘’].+[‘’])
+string      [\"'‘][^"'‘’]*[\"'’]
 comentario  [#].+
 asign       [=]
 error       ({entero}{variable})|[^({boolean}|{pal_reser}|{operadores}|{delimitador}|{numeros}|{entero}|{decimal}|{exp}|{img}|{logint}|{reales}|{variable}|{string}|{comentario}|{asign}|“ ”|t|\n)]
-/*Definiciones Regulares*/
+/*Definiciones Regulares \["'‘][^"'‘’]*\["'’]*/
 
 /* Reglas */
 
@@ -58,10 +58,10 @@ error       ({entero}{variable})|[^({boolean}|{pal_reser}|{operadores}|{delimita
 [+]           {printf("suma= %s ",yytext);}
 [-]           {printf("menos= %s ",yytext);}
 [*]           {printf("mult= %s ",yytext);}
-[*][*]        {printf("pot= %s ",yytext);}
+[*][*]|(^)    {printf("potencia= %s ",yytext);}
 {asign}       {printf("asig= %s ",yytext);}
 [/]           {printf("div= %s ",yytext);}
-[/][/]        {printf("%s es un op_npi ",yytext);}
+[/][/]        {printf("%s es un op_div_entera ",yytext);}
 [%]           {printf("%s es un op_mod ",yytext);}
 [<][<]        {printf("%s es un muy_menor ",yytext);}
 [>][>]        {printf("%s es un muy_mayor ",yytext);}
@@ -87,7 +87,6 @@ error       ({entero}{variable})|[^({boolean}|{pal_reser}|{operadores}|{delimita
                     int j=1;
                     int pos=0;
                     while(j<i && sw != 1){
-                      //Falla la comparacion
                       if(strcmp(ids[j],strdup(yytext)) == 0){
                         sw=1;
                         pos=j;
@@ -112,7 +111,7 @@ error       ({entero}{variable})|[^({boolean}|{pal_reser}|{operadores}|{delimita
 {string}      {printf("cadena=%s ",yytext);}
 {error}       {printf("Error=%s ",yytext);errores++;}
 {comentario}  
-. |\n
+. |\n         
 %%
 
 /* Reglas */

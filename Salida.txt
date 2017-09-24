@@ -16,13 +16,12 @@ WHILE  entero=2 mult= * id5=i menor_ig=<= long=40000L
 
 DEF  id10=otra_fun parabre=( parcierr=) dospuntos=: 
     PASS 
-PRINT parabre=( cadena=‘Esta es la respuesta’, con_123 , ’y la expresión ’ coma=,  entero=3 mult= * id5=i suma= + entero=5 mult= * parabre=( entero=7 menos= - id11=x parcierr=) parcierr=) 
+PRINT parabre=( cadena=cadena=Esta es la respuesta cadena= coma=, id11=con_123 coma=, cadena=cadena=y la expresióncadena= coma=,  entero=3 mult= * id5=i suma= + entero=5 mult= * parabre=( entero=7 menos= - id12=x parcierr=) parcierr=) 
 
 
 
-id12=table  asig= =  corch_abre=[ corch_cierra=] 
-id13=y  asig= =  corch_abre=[ corch_cierra=] 
-Error=123ABC 
+id13=table  asig= =  corch_abre=[ corch_cierra=] 
+id14=y  asig= =  Error=123ABC 
 
 id1 = eval 
 id2 = xi 
@@ -34,10 +33,11 @@ id7 = part
 id8 = j 
 id9 = h 
 id10 = otra_fun 
-id11 = x 
-id12 = table 
-id13 = y 
+id11 = con_123 
+id12 = x 
+id13 = table 
+id14 = y 
 
-Total identificadores: 13 
+Total identificadores: 14 
  
 Error(es): 2 
