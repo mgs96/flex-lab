@@ -591,9 +591,9 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "lab1_compi.l"
+#line 1 "LAB01_Guzman_Salcedo.l"
 /* Includes y definiciones de variables */
-#line 3 "lab1_compi.l"
+#line 3 "LAB01_Guzman_Salcedo.l"
 #include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -792,7 +792,7 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
     
-#line 37 "lab1_compi.l"
+#line 37 "LAB01_Guzman_Salcedo.l"
 
 #line 798 "lex.yy.c"
 
@@ -879,7 +879,7 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 38 "lab1_compi.l"
+#line 38 "LAB01_Guzman_Salcedo.l"
 { int i;
                 for (i=0;i<yyleng;i++){
                   printf ("%c",toupper(yytext[i]));
@@ -889,182 +889,182 @@ YY_RULE_SETUP
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 44 "lab1_compi.l"
+#line 44 "LAB01_Guzman_Salcedo.l"
 {printf("corch_abre=%s ",yytext);}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 45 "lab1_compi.l"
+#line 45 "LAB01_Guzman_Salcedo.l"
 {printf("corch_cierra=%s ",yytext);}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 46 "lab1_compi.l"
+#line 46 "LAB01_Guzman_Salcedo.l"
 {printf("punto_coma=%s ",yytext);}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 47 "lab1_compi.l"
+#line 47 "LAB01_Guzman_Salcedo.l"
 {printf("dospuntos=%s ",yytext);}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 48 "lab1_compi.l"
+#line 48 "LAB01_Guzman_Salcedo.l"
 {printf("muygrande=%s ",yytext);}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 49 "lab1_compi.l"
+#line 49 "LAB01_Guzman_Salcedo.l"
 {printf("muypequeño=%s ",yytext);}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 50 "lab1_compi.l"
+#line 50 "LAB01_Guzman_Salcedo.l"
 {printf("incremento=%s ",yytext);}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 51 "lab1_compi.l"
+#line 51 "LAB01_Guzman_Salcedo.l"
 {printf("reduccion=%s ",yytext);}
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 52 "lab1_compi.l"
+#line 52 "LAB01_Guzman_Salcedo.l"
 {printf("multiplicador=%s ",yytext);}
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 53 "lab1_compi.l"
+#line 53 "LAB01_Guzman_Salcedo.l"
 {printf("div=%s ",yytext);}
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 54 "lab1_compi.l"
+#line 54 "LAB01_Guzman_Salcedo.l"
 {printf("div_entero=%s ",yytext);}
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 55 "lab1_compi.l"
+#line 55 "LAB01_Guzman_Salcedo.l"
 {printf("and_igual=%s ",yytext);}
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 56 "lab1_compi.l"
+#line 56 "LAB01_Guzman_Salcedo.l"
 {printf("potenciador=%s ",yytext);}
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 57 "lab1_compi.l"
+#line 57 "LAB01_Guzman_Salcedo.l"
 {printf("modulador=%s ",yytext);}
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 58 "lab1_compi.l"
+#line 58 "LAB01_Guzman_Salcedo.l"
 {printf("suma= %s ",yytext);}
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 59 "lab1_compi.l"
+#line 59 "LAB01_Guzman_Salcedo.l"
 {printf("menos= %s ",yytext);}
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 60 "lab1_compi.l"
+#line 60 "LAB01_Guzman_Salcedo.l"
 {printf("mult= %s ",yytext);}
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 61 "lab1_compi.l"
+#line 61 "LAB01_Guzman_Salcedo.l"
 {printf("potencia= %s ",yytext);}
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 62 "lab1_compi.l"
+#line 62 "LAB01_Guzman_Salcedo.l"
 {printf("asig= %s ",yytext);}
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 63 "lab1_compi.l"
+#line 63 "LAB01_Guzman_Salcedo.l"
 {printf("div= %s ",yytext);}
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 64 "lab1_compi.l"
+#line 64 "LAB01_Guzman_Salcedo.l"
 {printf("op_div_entera= %s ",yytext);}
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 65 "lab1_compi.l"
+#line 65 "LAB01_Guzman_Salcedo.l"
 {printf("op_mod= %s ",yytext);}
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 66 "lab1_compi.l"
+#line 66 "LAB01_Guzman_Salcedo.l"
 {printf("muy_menor= %s ",yytext);}
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 67 "lab1_compi.l"
+#line 67 "LAB01_Guzman_Salcedo.l"
 {printf("muy_mayor= %s ",yytext);}
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 68 "lab1_compi.l"
+#line 68 "LAB01_Guzman_Salcedo.l"
 {printf("and= %s ",yytext);}
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 69 "lab1_compi.l"
+#line 69 "LAB01_Guzman_Salcedo.l"
 {printf("negacion= %s ",yytext);}
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 70 "lab1_compi.l"
+#line 70 "LAB01_Guzman_Salcedo.l"
 {printf("menor= %s ",yytext);}
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 71 "lab1_compi.l"
+#line 71 "LAB01_Guzman_Salcedo.l"
 {printf("mayor= %s ",yytext);}
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 72 "lab1_compi.l"
+#line 72 "LAB01_Guzman_Salcedo.l"
 {printf("menor_ig=%s ",yytext);}
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 73 "lab1_compi.l"
+#line 73 "LAB01_Guzman_Salcedo.l"
 {printf("mayor_ig=%s ",yytext);}
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 74 "lab1_compi.l"
+#line 74 "LAB01_Guzman_Salcedo.l"
 {printf("comp= %s ",yytext);}
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 75 "lab1_compi.l"
+#line 75 "LAB01_Guzman_Salcedo.l"
 {printf("diferente= %s  ",yytext);}
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 76 "lab1_compi.l"
+#line 76 "LAB01_Guzman_Salcedo.l"
 {printf("parabre=%s ",yytext);}
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 77 "lab1_compi.l"
+#line 77 "LAB01_Guzman_Salcedo.l"
 {printf("parcierr=%s ",yytext);}
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 78 "lab1_compi.l"
+#line 78 "LAB01_Guzman_Salcedo.l"
 {printf("coma=%s ",yytext);}
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 79 "lab1_compi.l"
+#line 79 "LAB01_Guzman_Salcedo.l"
 {
                  if(i==1){
                     ids[i]=strdup(yytext);
@@ -1094,49 +1094,49 @@ YY_RULE_SETUP
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 105 "lab1_compi.l"
+#line 105 "LAB01_Guzman_Salcedo.l"
 {printf("entero=%s ",yytext);}
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 106 "lab1_compi.l"
+#line 106 "LAB01_Guzman_Salcedo.l"
 {printf("decimal=%s ",yytext);}
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
-#line 107 "lab1_compi.l"
+#line 107 "LAB01_Guzman_Salcedo.l"
 {printf("real=%s ",yytext);}
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
-#line 108 "lab1_compi.l"
+#line 108 "LAB01_Guzman_Salcedo.l"
 {printf("imaginario=%s ",yytext);}
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
-#line 109 "lab1_compi.l"
+#line 109 "LAB01_Guzman_Salcedo.l"
 {printf("long=%s ",yytext);}
 	YY_BREAK
 case 43:
 /* rule 43 can match eol */
 YY_RULE_SETUP
-#line 110 "lab1_compi.l"
+#line 110 "LAB01_Guzman_Salcedo.l"
 {printf("cadena=%s ",yytext);}
 	YY_BREAK
 case 44:
 YY_RULE_SETUP
-#line 111 "lab1_compi.l"
+#line 111 "LAB01_Guzman_Salcedo.l"
 {printf("Error=%s ",yytext);errores++;}
 	YY_BREAK
 case 45:
 YY_RULE_SETUP
-#line 112 "lab1_compi.l"
+#line 112 "LAB01_Guzman_Salcedo.l"
 
 	YY_BREAK
 case 46:
-#line 114 "lab1_compi.l"
+#line 114 "LAB01_Guzman_Salcedo.l"
 case 47:
-#line 114 "lab1_compi.l"
+#line 114 "LAB01_Guzman_Salcedo.l"
 ECHO;
 	YY_BREAK
 #line 1143 "lex.yy.c"
@@ -2137,7 +2137,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 114 "lab1_compi.l"
+#line 114 "LAB01_Guzman_Salcedo.l"
 
 
 
