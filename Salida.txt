@@ -16,7 +16,7 @@ WHILE  entero=2 mult= * id5=i menor_ig=<= long=40000L
 
 DEF  id10=otra_fun parabre=( parcierr=) dospuntos=: 
     PASS 
-PRINT parabre=( cadena=cadena=Esta es la respuesta cadena= coma=, id11=con_123 coma=, cadena=cadena=y la expresióncadena= coma=,  entero=3 mult= * id5=i suma= + entero=5 mult= * parabre=( entero=7 menos= - id12=x parcierr=) parcierr=) 
+PRINT parabre=( cadena=cadena=Esta es la respuesta cadena= coma=, id11=con_123 coma=, cadena=cadena= y la expresióncadena= coma=,  entero=3 mult= * id5=i suma= + entero=5 mult= * parabre=( entero=7 menos= - id12=x parcierr=) parcierr=) 
 
 
 
@@ -40,4 +40,4 @@ id14 = y
 
 Total identificadores: 14 
  
-Error(es): 2 
+Error(es): 2

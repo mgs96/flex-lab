@@ -26,11 +26,11 @@ reales      {exp}|{img}|{logint}
 letra       [_a-zA-Z]
 caracter    [_a-zA-Z0-9]*
 variable    {letra}{caracter}
-string      [\"'‘][^"'‘’]*[\"'’]
-comentario  [#].+
+string      [\‘’][^‘]*[\‘’]|[\"][^"]*[\"]|[\'][^']*[\']
+comentario  [\#].+
 asign       [=]
 error       ({entero}{variable})|[^({boolean}|{pal_reser}|{operadores}|{delimitador}|{numeros}|{entero}|{decimal}|{exp}|{img}|{logint}|{reales}|{variable}|{string}|{comentario}|{asign}|“ ”|t|\n)]|({operadores}{operadores})
-/*Definiciones Regulares \["'‘][^"'‘’]*\["'’]*/
+/*Definiciones Regulares [\"'‘][^"'‘’]*[\"'’]*/
 
 /* Reglas */
 
@@ -45,35 +45,34 @@ error       ({entero}{variable})|[^({boolean}|{pal_reser}|{operadores}|{delimita
 []]           {printf("corch_cierra=%s ",yytext);}
 [;]           {printf("punto_coma=%s ",yytext);}
 [:]           {printf("dospuntos=%s ",yytext);}
-[>][>][=]     
-[<][<][=]     
-[+][=]        
-[-][=]        
-[*][=]        
-[/][=]        
-[/][/][=]     
-[&][=]        
-[*][*][=]     
-[%][=]        
+[>][>][=]     {printf("muygrande=%s ",yytext);}
+[<][<][=]     {printf("muypequeño=%s ",yytext);}
+[+][=]        {printf("incremento=%s ",yytext);}
+[-][=]        {printf("reduccion=%s ",yytext);}
+[*][=]        {printf("multiplicador=%s ",yytext);}
+[/][=]        {printf("div=%s ",yytext);}
+[/][/][=]     {printf("div_entero=%s ",yytext);}
+[&][=]        {printf("and_igual=%s ",yytext);}
+[*][*][=]     {printf("potenciador=%s ",yytext);}
+[%][=]        {printf("modulador=%s ",yytext);}
 [+]           {printf("suma= %s ",yytext);}
 [-]           {printf("menos= %s ",yytext);}
 [*]           {printf("mult= %s ",yytext);}
 [*][*]|(^)    {printf("potencia= %s ",yytext);}
 {asign}       {printf("asig= %s ",yytext);}
 [/]           {printf("div= %s ",yytext);}
-[/][/]        {printf("%s es un op_div_entera ",yytext);}
-[%]           {printf("%s es un op_mod ",yytext);}
-[<][<]        {printf("%s es un muy_menor ",yytext);}
-[>][>]        {printf("%s es un muy_mayor ",yytext);}
-[&]           {printf("%s es un and ",yytext);}
-[~]           {printf("%s es un negacion ",yytext);}
-[<]           {printf("%s es un menor ",yytext);}
-[>]           {printf("%s es un mayor ",yytext);}
+[/][/]        {printf("op_div_entera= %s ",yytext);}
+[%]           {printf("op_mod= %s ",yytext);}
+[<][<]        {printf("muy_menor= %s ",yytext);}
+[>][>]        {printf("muy_mayor= %s ",yytext);}
+[&]           {printf("and= %s ",yytext);}
+[~]           {printf("negacion= %s ",yytext);}
+[<]           {printf("menor= %s ",yytext);}
+[>]           {printf("mayor= %s ",yytext);}
 [<][=]        {printf("menor_ig=%s ",yytext);}
 [>][=]        {printf("mayor_ig=%s ",yytext);}
 [=][=]        {printf("comp= %s ",yytext);}
-[!][=]        {printf("%s es un diferente ",yytext);}
-[<][>]        {printf("%s es un diferente ",yytext);}
+[!][=]|[<][>] {printf("diferente= %s  ",yytext);}
 [(]           {printf("parabre=%s ",yytext);}
 [)]           {printf("parcierr=%s ",yytext);}
 [,]           {printf("coma=%s ",yytext);}
