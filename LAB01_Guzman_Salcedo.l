@@ -4,13 +4,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 
 int i=1;
+int parop=0,parcl=0;
 char *ids[1000];
 int errores=0;
 %}
 
-/* Definiciones Regulares */
+/* Definiciones Regulares y Gramaticas*/
 boolean     True|true|TRUE|False|false|FALSE
 pal_reser   and|else|is|return|break|for|not|while|continue|if|or|def|import|pass|elif|in|print|range|{boolean}
 operadores  [+]|[-]|[*]|[*][*]|[/]|[/][/]|[%]|[<][<]|[>][>]|[&]|[|]|(^)|[~][<]|[>]|[<][=]|[>][=]|[=][=]|[!][=]|[<][>]
@@ -73,8 +75,8 @@ error       ({entero}{variable})|[^({boolean}|{pal_reser}|{operadores}|{delimita
 [>][=]        {printf("mayor_ig=%s ",yytext);}
 [=][=]        {printf("comp= %s ",yytext);}
 [!][=]|[<][>] {printf("diferente= %s  ",yytext);}
-[(]           {printf("parabre=%s ",yytext);}
-[)]           {printf("parcierr=%s ",yytext);}
+[(]           {printf("parabre=%s ",yytext);parop++;}
+[)]           {printf("parcierr=%s ",yytext);parcl++;}
 [,]           {printf("coma=%s ",yytext);}
 {variable}    {
                  if(i==1){
@@ -110,7 +112,8 @@ error       ({entero}{variable})|[^({boolean}|{pal_reser}|{operadores}|{delimita
 {string}      {printf("cadena=%s ",yytext);}
 {error}       {printf("Error=%s ",yytext);errores++;}
 {comentario}  
-. |\n         
+. |\n      
+
 %%
 
 /* Reglas */
